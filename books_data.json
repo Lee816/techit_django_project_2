@@ -1,0 +1,492 @@
+[
+  {
+    "model": "books.category",
+    "pk": 1,
+    "fields": {
+      "name": "Comic"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 2,
+    "fields": {
+      "name": "Novel"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 3,
+    "fields": {
+      "name": "Non-fiction"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 4,
+    "fields": {
+      "name": "Children's"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 5,
+    "fields": {
+      "name": "Cooking"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 6,
+    "fields": {
+      "name": "Business"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 7,
+    "fields": {
+      "name": "Self-help"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 8,
+    "fields": {
+      "name": "History"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 9,
+    "fields": {
+      "name": "Science"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 10,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 11,
+    "fields": {
+      "name": "Fantasy"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 12,
+    "fields": {
+      "name": "Thriller"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 13,
+    "fields": {
+      "name": "Science fiction"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 14,
+    "fields": {
+      "name": "Romance"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 15,
+    "fields": {
+      "name": "History fiction"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 16,
+    "fields": {
+      "name": "Biography"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 17,
+    "fields": {
+      "name": "Instructional"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 18,
+    "fields": {
+      "name": "Art"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 19,
+    "fields": {
+      "name": "Photography"
+    }
+  },
+  {
+    "model": "books.category",
+    "pk": 20,
+    "fields": {
+      "name": "Poetry"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "title": "Slam Dunk 1",
+      "author": "INOUE TAKEHIKO",
+      "publisher": "shueisha",
+      "stock": 5,
+      "summary": "Slam Dunk is a Japanese sports manga series written and illustrated by Takehiko Inoue. It was first serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump from 1990 to 1996. The 31 collected tankōbon volumes of the manga have sold over 120 million copies in Japan and 150 million copies worldwide, making it one of the best-selling manga series of all time.",
+      "like": 0,
+      "created": "2023-08-28T07:49:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "title": "The Fighting",
+      "author": "George Morikawa",
+      "publisher": "Weekly Shōnen Magazine",
+      "stock": 3,
+      "summary": "The Fighting",
+      "like": 0,
+      "created": "2023-08-28T07:49:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "title": "One Piece 1",
+      "author": "Eiichiro Oda",
+      "publisher": "Shueisha",
+      "stock": 3,
+      "summary": "One Piece is a Japanese shōnen manga series written and illustrated by Eiichiro Oda. It has been serialized in Shueisha's shōnen manga magazine Weekly Shōnen Jump since July 1997, and has been collected into 102 tankōbon volumes. The story follows the adventures of Monkey D. Luffy, a young man who gains the power to stretch his body like rubber after eating a Devil Fruit. Luffy sets out to find the One Piece, a treasure left by the former King of the Pirates, Gol D. Roger.",
+      "like": 0,
+      "created": "2023-08-29T07:50:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "title": "Harry Potter and the Sorcerer's Stone",
+      "author": "J.K. Rowling",
+      "publisher": "Scholastic Corporation",
+      "stock": 1,
+      "summary": "Harry Potter and the Sorcerer's Stone is a fantasy novel by J. K. Rowling. The first novel in the Harry Potter series, it follows Harry Potter, an orphan who learns on his eleventh birthday that he is a wizard, famous in the wizarding world for surviving an attack by the evil Lord Voldemort when he was only a baby. Harry is summoned from his life as an unwanted child by his parents' friend Albus Dumbledore, a powerful sorcerer and headmaster of Hogwarts School of Witchcraft and Wizardry. Harry is sorted into Gryffindor House and begins his education in magic. During the school year, Harry and his friends Ron Weasley and Hermione Granger investigate the Sorcerer's Stone, an object that can grant immortality. They are opposed by Voldemort, who is trying to steal the Stone to regain his full body. In the end, Harry defeats Voldemort, saving the Stone and himself.",
+      "like": 0,
+      "created": "2023-08-29T07:51:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "title": "The Lord of the Rings",
+      "author": "J.R.R. Tolkien",
+      "publisher": "George Allen & Unwin",
+      "stock": 5,
+      "summary": "The Lord of the Rings is an epic high fantasy trilogy written by English philologist and University of Oxford professor J. R. R. Tolkien. The story began as a sequel to Tolkien's 1937 fantasy novel The Hobbit, but eventually developed into a much larger work. Written in stages between 1937 and 1949, with much of it being written during World War II, it was originally published in three volumes in 1954 and 1955. It has since been reprinted numerous times and translated into at least 38 languages, becoming one of the best-selling novels ever written.",
+      "like": 0,
+      "created": "2023-08-29T07:52:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 6,
+    "fields": {
+      "category": 5,
+      "title": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "publisher": "Pan Books",
+      "stock": 1,
+      "summary": "The Hitchhiker's Guide to the Galaxy is a comedic science fiction series created by Douglas Adams. The Hitchhiker's Guide to the Galaxy is a pan-galactic encyclopaedia and travel guide for hitchhikers, owned by Arthur Dent, a hapless Englishman, following the destruction of the Earth by the Vogons, a race of unpleasant and bureaucratic aliens. Arthur escapes Earth's destruction with his friend Ford Prefect, who turns out to be an alien researcher who had been stranded on Earth for fifteen years while gathering information for the titular Hitchhiker's Guide to the Galaxy.",
+      "like": 0,
+      "created": "2023-08-30T07:53:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 7,
+    "fields": {
+      "category": 6,
+      "title": "The Da Vinci Code",
+      "author": "Dan Brown",
+      "publisher": "Doubleday",
+      "stock": 1,
+      "summary": "The Da Vinci Code is a 2003 mystery thriller novel by Dan Brown. The story follows Robert Langdon, a professor of symbology at Harvard University, and Sophie Neveu, a police cryptologist, in their investigation of the murder of Jacques Saunière, the curator of the Louvre Museum in Paris. The murder scene is filled with cryptic clues that lead Langdon and Neveu on a chase around the city, as they try to solve the mystery behind the Priory of Sion, a secret society that has been protecting a centuries-old secret.",
+      "like": 0,
+      "created": "2023-08-30T07:54:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 8,
+    "fields": {
+      "category": 7,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "publisher": "J. B. Lippincott & Co.",
+      "stock": 4,
+      "summary": "To Kill a Mockingbird is a novel by Harper Lee published in 1960. It won the Pulitzer Prize and was adapted into an Academy Award-winning film in 1962. The novel is set in the fictional town of Maycomb, Alabama, during the Great Depression. It tells the story of Jean Louise 'Scout' Finch and her brother, Jeremy Atticus 'Jem' Finch, as they come of age under the guidance of their father, Atticus, who is a lawyer. Atticus is appointed to defend Tom Robinson, a black man who has been falsely accused of raping a white woman. The trial is a watershed moment for Scout and Jem, as they learn about the prejudice and injustice that exists in the world.",
+      "like": 0,
+      "created": "2023-08-30T07:55:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 9,
+    "fields": {
+      "category": 8,
+      "title": "The Catcher in the Rye",
+      "author": "J. D. Salinger",
+      "publisher": "Little, Brown and Company",
+      "stock": 1,
+      "summary": "The Catcher in the Rye is a novel by J. D. Salinger, first published in 1951. The story follows Holden Caulfield, a teenage boy who is expelled from Pencey Prep, an elite boarding school in Pennsylvania. Holden then travels to New York City for a few days before returning home. During his time in New York, Holden reflects on his life and the world around him. The novel is known for its exploration of themes such as alienation, adolescence, and the loss of innocence.",
+      "like": 0,
+      "created": "2023-08-31T07:56:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 10,
+    "fields": {
+      "category": 9,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "publisher": "T. Egerton",
+      "stock": 1,
+      "summary": "Pride and Prejudice is a novel of manners written by Jane Austen. It was first published in 1813. The story follows Elizabeth Bennet, the second of five sisters, as she deals with issues of manners, upbringing, morality, education, and marriage in the society of the landed gentry of early 19th-century England. Elizabeth is a strong-willed and intelligent woman who is determined to marry for love rather than money. She is initially prejudiced against Fitzwilliam Darcy, a wealthy and eligible bachelor, but she eventually comes to realize that he is a kind and generous man.",
+      "like": 0,
+      "created": "2023-08-31T07:57:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 11,
+    "fields": {
+      "category": 10,
+      "title": "The Metamorphosis",
+      "author": "Franz Kafka",
+      "publisher": "Kurt Wolff Verlag",
+      "stock": 10,
+      "summary": "The Metamorphosis is a novella by Franz Kafka, first published in 1915. The story, which is written in the first person, follows Gregor Samsa, a travelling salesman who wakes up one morning to find himself transformed into a giant insect. Gregor is initially horrified by his transformation, but he eventually comes to accept his new form. The novella explores themes of alienation, isolation, and the absurdity of life.",
+      "like": 10,
+      "created": "2023-08-31T07:58:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 12,
+    "fields": {
+      "category": 11,
+      "title": "The Lord of the Flies",
+      "author": "William Golding",
+      "publisher": "Faber and Faber",
+      "stock": 5,
+      "summary": "The Lord of the Flies is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
+      "like": 5,
+      "created": "2023-09-01T07:59:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 13,
+    "fields": {
+      "category": 12,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "publisher": "George Allen & Unwin",
+      "stock": 5,
+      "summary": "The Hobbit, or There and Back Again is a fantasy novel by J. R. R. Tolkien. It was published in 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic of children's literature.",
+      "like": 5,
+      "created": "2023-09-01T08:00:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 14,
+    "fields": {
+      "category": 13,
+      "title": "The Handmaid's Tale",
+      "author": "Margaret Atwood",
+      "publisher": "Hamish Hamilton",
+      "stock": 10,
+      "summary": "The Handmaid's Tale is a dystopian novel by Canadian author Margaret Atwood. It was first published in 1985. The story is set in a future where the United States has become a totalitarian theocracy called Gilead. In Gilead, women are divided into three classes: Handmaids, who are forced to bear children for the ruling class; Wives, who are the wives of the ruling class; and Econowives, who are the wives of the lower class. The novel follows Offred, a Handmaid who is forced to live in a household with a Commander and his Wife. Offred must navigate the dangers of Gilead and find a way to escape.",
+      "like": 10,
+      "created": "2023-09-01T08:01:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 15,
+    "fields": {
+      "category": 14,
+      "title": "1984",
+      "author": "George Orwell",
+      "publisher": "Secker & Warburg",
+      "stock": 5,
+      "summary": "Nineteen Eighty-Four is a dystopian political novel by English novelist George Orwell. It was published in 1949 and is widely regarded as one of the greatest works of dystopian literature. The novel is set in Airstrip One, a province of Oceania, a totalitarian state that is constantly at war with its neighbours. The protagonist, Winston Smith, is a man who works for the Thought Police, which is responsible for enforcing the Party's ideology. Winston begins to question the Party's control and starts a secret diary. He is eventually caught by the Thought Police and tortured into submission.",
+      "like": 5,
+      "created": "2023-09-01T08:02:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 16,
+    "fields": {
+      "category": 15,
+      "title": "The Giver",
+      "author": "Lois Lowry",
+      "publisher": "Houghton Mifflin",
+      "stock": 10,
+      "summary": "The Giver is a science fiction novel by American writer Lois Lowry. It was published in 1993 and won the 1994 Newbery Medal. The novel is set in a seemingly utopian community where everyone is assigned a role and there is no pain or suffering. Jonas is a young man who is chosen to be the Receiver of Memory, the only person in the community who knows about the true history and pain of the world. Jonas must learn to keep the memories a secret and decide whether he wants to stay in the community or leave.",
+      "like": 10,
+      "created": "2023-09-02T08:03:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 17,
+    "fields": {
+      "category": 16,
+      "title": "To Kill a Mockingbird 2",
+      "author": "Harper Lee",
+      "publisher": "J. B. Lippincott & Co.",
+      "stock": 5,
+      "summary": "To Kill a Mockingbird 2 is a novel by Harper Lee published in 1960. It won the Pulitzer Prize and was adapted into an Academy Award-winning film in 1962. The novel is set in the fictional town of Maycomb, Alabama, during the Great Depression. It tells the story of Jean Louise 'Scout' Finch and her brother, Jeremy Atticus 'Jem' Finch, as they come of",
+      "like": 10,
+      "created": "2023-09-02T08:03:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 18,
+    "fields": {
+      "category": 17,
+      "title": "The Color Purple",
+      "author": "Alice Walker",
+      "publisher": "Harcourt Brace Jovanovich",
+      "stock": 10,
+      "summary": "The Color Purple is a novel by American author Alice Walker. It was published in 1982 and won the Pulitzer Prize for Fiction in 1983. The novel is set in the American South during the early 20th century. It tells the story of Celie, a young black woman who is abused by her husband and father. Celie finds solace in the letters she writes to God and in her relationship with Shug Avery, a blues singer.",
+      "like": 10,
+      "created": "2023-09-03T08:04:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 19,
+    "fields": {
+      "category": 18,
+      "title": "Their Eyes Were Watching God",
+      "author": "Zora Neale Hurston",
+      "publisher": "J.B. Lippincott",
+      "stock": 5,
+      "summary": "Their Eyes Were Watching God is a novel by Zora Neale Hurston, first published in 1937. It is the story of Janie Crawford, a young black woman who is raised by her grandmother in rural Florida. Janie is married twice, first to an abusive farmer named Logan Killicks, and then to a wealthy man named Joe Starks. Janie eventually leaves Joe and finds love with Tea Cake Woods, a poor sharecropper.",
+      "like": 5,
+      "created": "2023-09-03T08:05:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 20,
+    "fields": {
+      "category": 19,
+      "title": "The Kite Runner",
+      "author": "Khaled Hosseini",
+      "publisher": "Riverhead Books",
+      "stock": 10,
+      "summary": "The Kite Runner is a novel by Khaled Hosseini, first published in 2003. It is set in Afghanistan before and after the Soviet invasion. The novel tells the story of Amir, a young boy from a wealthy family, and Hassan, his Hazara friend who is the son of his father's servant. Amir is forced to confront his own prejudices and shortcomings as he tries to make amends for his past mistakes.",
+      "like": 10,
+      "created": "2023-09-04T08:06:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 21,
+    "fields": {
+      "category": 20,
+      "title": "The Fault in Our Stars",
+      "author": "John Green",
+      "publisher": "Dutton Books",
+      "stock": 5,
+      "summary": "The Fault in Our Stars is a novel by John Green, first published in 2012. It is a coming-of-age story about two teenagers, Hazel Grace Lancaster and Augustus Waters, who meet at a cancer support group. Hazel is a 16-year-old girl with thyroid cancer that has spread to her lungs. Augustus is a 17-year-old boy who had osteosarcoma but is now in remission. The two fall in love and embark on a journey to Amsterdam to visit the Anne Frank House.",
+      "like": 5,
+      "created": "2023-09-05T08:07:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 22,
+    "fields": {
+      "category": 5,
+      "title": "The Book Thief",
+      "author": "Markus Zusak",
+      "publisher": "Knopf Books for Young Readers",
+      "stock": 10,
+      "summary": "The Book Thief is a historical novel by Markus Zusak, first published in 2005. It is set in Nazi Germany during World War II. The novel tells the story of Liesel Meminger, a young girl who is sent to live with foster parents in Molching, a small town outside of Munich. Liesel is an avid reader, and she begins to steal books from Nazi book burnings. She shares the books with her friend, Max Vandenburg, a Jewish boy hiding from the Nazis.",
+      "like": 10,
+      "created": "2023-09-06T08:08:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 23,
+    "fields": {
+      "category": 4,
+      "title": "The Curious Incident of the Dog in the Night-Time",
+      "author": "Mark Haddon",
+      "publisher": "Doubleday",
+      "stock": 5,
+      "summary": "The Curious Incident of the Dog in the Night-Time is a novel by Mark Haddon, first published in 2003. It is told in the first person from the perspective of Christopher John Francis Boone, a 15-year-old boy with autism. Christopher is trying to solve the mystery of who killed his neighbor's dog, Wellington. As he investigates the crime, he learns more about himself and the world around him.",
+      "like": 5,
+      "created": "2023-09-07T08:09:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 24,
+    "fields": {
+      "category": 16,
+      "title": "The Lord of the Flies 2",
+      "author": "William Golding",
+      "publisher": "Faber and Faber",
+      "stock": 5,
+      "summary": "The Lord of the Flies 2 is a 1954 novel by British writer William Golding. The story follows a group of British boys who are stranded on an uninhabited island following a plane crash. The boys are initially excited and free, but they soon descend into savagery and violence. The novel is an exploration of the dark side of human nature and the dangers of power.",
+      "like": 5,
+      "created": "2023-09-07T08:10:24.133Z"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 25,
+    "fields": {
+      "category": 12,
+      "title": "The Hobbit 2",
+      "author": "J.R.R. Tolkien",
+      "publisher": "George Allen & Unwin",
+      "stock": 5,
+      "summary": "The Hobbit, or There and Back Again is a fantasy novel by J. R. R. Tolkien. It was published in 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic of children's literature.",
+      "like": 5,
+      "created": "2023-09-08T08:11:24.133Z"
+    }
+  }
+]

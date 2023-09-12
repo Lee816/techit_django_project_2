@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <h5>Add Book</h5>
+    <hr>
+    <form action="{% url 'books:book_create' %}" method="post">
+        {% for field, errors in form.errors.items %}
+            <ul class="errorlist">
+            {% for error in errors %}
+                <li class='alert alert-danger'>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Ctegory</label>
+            <br>
+            {{ form.category }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Title</label>
+            <br>
+            {{ form.title }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Author</label>
+            <br>
+            {{ form.author }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Publisher</label>
+            <br>
+            {{ form.publisher }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Stock</label>
+            <br>
+            {{ form.stock }}
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Summary</label>
+            <br>
+            {{ form.summary }}
+        </div>
+        {% csrf_token %}
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <p><input class='btn btn-outline-dark' type="submit" value="Add"></p>
+        </div>
+    </form>
+{% endblock contents %}
+

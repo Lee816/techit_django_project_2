@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <h5>My Rental List</h5>
+    <hr>
+    {% for rental in rental_books %}
+        {% if not rental.book_return %}
+            <form class="alert alert-dark" action="{% url 'books:book_return' rental.book.id %}" method="post">
+                <a class='text-decoration-none text-secondary-emphasis fs-5' href="{% url 'books:book_detail' rental.book.id %}">{{ rental.book.title }}</a>
+                <span class="m-5">{{ rental.rental_date|date:"Y-m-d" }} ~ {{ rental.return_date|date:"Y-m-d" }}</span>
+                {% csrf_token %}
+                <span class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <input class="btn btn-outline-dark" type="submit" value="Return">
+                </span>
+            </form>
+        {% endif %}
+    {% endfor %}
+{% endblock contents %}

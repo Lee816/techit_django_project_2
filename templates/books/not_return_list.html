@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <h5>Not Return List</h5>
+    <hr>
+    <table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Book</th>
+            <th scope="col">User</th>
+            <th scope="col">Return</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            {% for not_rental_book in not_rental_books %}
+            <th scope="row">{{ not_rental_book.book }}</th>
+            <td>{{ not_rental_book.return_date|date:"Y-m-d" }}</td>
+            <td>{{ not_rental_book.user }} ( {{ not_rental_book.user.phone}} )</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+    </table>
+{% endblock contents %}

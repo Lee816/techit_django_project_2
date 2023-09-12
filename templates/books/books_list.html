@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    {% if category %}
+        <h5> {{ category.name }} Books List</h5>
+    {% elif word %}
+        <h5> {{ word }} Books List</h5>
+    {% else %}
+        <h5>All Books List</h5>
+    {% endif %}
+    <hr>
+    {% for book in books %}
+        <div class="card mt-2">
+            <div class="card-header">
+                <a class="text-decoration-none text-secondary-emphasis " href="{% url 'books:category_books_list' book.category.id %}">{{ book.category }}</a>
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                <p><a class='text-decoration-none fs-4 text-secondary-emphasis' href="{% url 'books:book_detail' book.id %}">{{ book.title }}</a><br></p>
+                <footer class="blockquote-footer fs-6 fst-italic">{{ book.author }}</footer>
+                </blockquote>
+            </div>
+        </div>
+    {% endfor %}
+    {% include 'pagination.html' %}
+{% endblock contents %}

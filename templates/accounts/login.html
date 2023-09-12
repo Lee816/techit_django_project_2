@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+{% endblock css %}
+
+{% block contents %}
+    <div class="offcanvas offcanvas-start show" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasLabel">Log-in</h5>
+            <a href="{% url 'home' %}"><button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button></a>
+        </div>
+        <hr>
+        <div class="offcanvas-body">
+            <form action="{% url 'accounts:login' %}" method="post">
+                {% for field, errors in form.errors.items %}
+                    <ul class="errorlist">
+                    {% for error in errors %}
+                        <li class='alert alert-danger'>{{ error }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Phone</label>
+                    <br>
+                    {{ form.username }}
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Password</label>
+                    <br>
+                    {{ form.password }}
+                </div>
+                {% csrf_token %}
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <p><input class='btn btn-outline-dark' type="submit" value="Log-in"></p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock contents %}

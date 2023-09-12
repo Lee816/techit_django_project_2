@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+    <div class="d-flex flex-column mb-3">
+        <div class="p-2">
+            <h5>Recent Book</h5>
+            <hr>
+            <ol class="list-group">
+                {% for book in latest_books %}
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <span class="badge bg-secondary">
+                        New
+                    </span>
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">{{ book.title }}</div>
+                    </div>
+                    <span class="badge bg-transparent text-body">Add : {{ book.created|date:"Y-m-d" }}</span>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+        <div class="p-2">
+            <h5>Best Rent Top 10</h5>
+            <hr>
+            <ol class="list-group list-group-numbered">
+                {% for book in like_books %}
+                    {% if book.like > 0 %}
+                        <li class="list-group-item d-flex justify-content-between align-items-start">
+                            <div class="ms-2 me-auto">
+                            <div class="fw-bold">{{ book.title }}</div>
+                            </div>
+                            <span class="badge bg-transparent text-body">Rent : {{ book.like }}</span>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+{% endblock contents %}
