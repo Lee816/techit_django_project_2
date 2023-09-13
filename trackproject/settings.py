@@ -55,7 +55,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'book_rental_system.urls'
+ROOT_URLCONF = 'trackproject.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'book_rental_system.wsgi.application'
+WSGI_APPLICATION = 'trackproject.wsgi.application'
 
 
 # Database
