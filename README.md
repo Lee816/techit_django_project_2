@@ -79,3 +79,12 @@
 - 데이터 가져오기 <br>
 `python -Xutf8 manage.py loaddata books_data.json`
 
+[두번째 미션](https://likelion.notion.site/fa95ed65277848b3957e36d6c0bd24b9)
+
+RebbitMQ
+1. docker 실행
+2. rabbitmq 설치 - `docker pull rebbitmq`
+3. rabbitmq 실행 - `docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:management`
+
+Celery
+1. celery 실행 - `celery -A trackproject worker -l info`
