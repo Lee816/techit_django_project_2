@@ -4,3 +4,4 @@ Pillow==10.0.0
 psycopg2==2.9.7
 sqlparse==0.4.4
 tzdata==2023.3
+celery==5.3.4
