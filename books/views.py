@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator
 
 from .models import Book, Books_rental, Category
+from .tasks import return_email
 
 # Create your views here.
 
@@ -76,6 +77,10 @@ def BookReturn(request, book_id):
         rental_book.book_return = True
         book.save()
         rental_book.save()
+        
+        # 비동기 반납 메일 보내기
+        return_email.delay(book_id)
+        
     return redirect('books:my_rentals')
 
 @login_required
@@ -88,7 +93,6 @@ def BookReturnList(request):
 
 def BookSearch(request):
     word = request.GET.get('word')
-    print(word)
     books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
     
     paginator = Paginator(books, 5)
