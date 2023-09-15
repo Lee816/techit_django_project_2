@@ -138,3 +138,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # 콘솔메일 설정
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+# celery 설정
+CELERY_TASK_ALWAYS_EAGER =  True
