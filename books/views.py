@@ -5,6 +5,7 @@ from django.views import generic
 from django.shortcuts import get_object_or_404, redirect, render ,get_list_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required, permission_required
+from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator
 
 from .models import Book, Books_rental, Category, Review
@@ -113,5 +114,20 @@ def BookSearch(request):
         'page_obj': page,
         'paginator': paginator,
     })
-
     
+@login_required
+@require_POST
+def ReviewAdd(request, book_id):
+    book = get_object_or_404(Book, id=book_id)
+    rental_book = Books_rental.objects.filter(user=request.user, book=book)
+    form = ReviewForm(data=request.POST)
+    
+    # 대여기록이 있으면 리뷰 작성 가능
+    if rental_book:
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.book = book
+            review.save()
+        
+    return redirect('books:book_detail', book_id)
