@@ -1,5 +1,11 @@
 {% extends "base.html" %}
 
 {% block contents %}
-    {{ rent_count }}
+    <p>총 대여 횟수 : {{ rent_count }}</p>
+
+    <p>작성한 리뷰의 평균 평점 : {{ review_aver|floatformat:1 }}</p>
+
+    {% for review in reviews %}
+        <p>{{ review.book }}- {{ review.grade }} {% if review.body %}- {{ review.body }}{% endif %}</p>
+    {% endfor %}
 {% endblock contents %}

@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout,update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 
+from books.models import Books_rental, Review
+
 from .forms import UserRegisterForm,UserUpdateForm,UserLoginForm
 
 # Create your views here.
@@ -79,3 +81,10 @@ def ChangePWUser(request):
     else:
         form = PasswordChangeForm(request.user)
     return render(request, 'accounts/changePW.html', {'form':form})
+
+def MyPage(request, user_id):
+    rent_count = Books_rental.objects.filter(user__id=user_id).count()
+    reviews = Review.objects.filter(user__id=user_id)
+    review_aver = sum([review.grade for review in reviews])/len(reviews)
+    
+    return render (request, 'accounts/my_page.html', {'rent_count':rent_count,'reviews':reviews,'review_aver':review_aver})
