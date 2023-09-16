@@ -59,7 +59,7 @@ class RentalBooksList(LoginRequiredMixin, generic.ListView):
     redirect_field_name = 'accounts/login'
     
     def get_queryset(self):
-        return Books_rental.objects.filter(user=self.request.user)
+        return Books_rental.objects.filter(user=self.request.user, book_return=False)
 
 @login_required
 def BookRent(request, book_id):
@@ -80,7 +80,7 @@ def BookRent(request, book_id):
 def BookReturn(request, book_id):
     if request.method == 'POST':
         book = get_object_or_404(Book, id=book_id)
-        rental_book = Books_rental.objects.filter(book=book, user=request.user, book_return=False)[0]
+        rental_book = Books_rental.objects.filter(book=book, user=request.user, book_return=False).first()
         book.stock += 1
         rental_book.book_return = True
         book.save()
