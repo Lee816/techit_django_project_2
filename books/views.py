@@ -23,7 +23,7 @@ class BooksList(generic.ListView):
     context_object_name = 'books'
     template_name = 'books/books_list.html'
     
-    paginate_by = 5
+    paginate_by = 4
     
 def CategoryBooksList(request, category_id):
     books = Book.objects.filter(category=category_id)
@@ -102,7 +102,7 @@ def BookSearch(request):
     word = request.GET.get('word')
     books = Book.objects.filter(Q(title__icontains=word)|Q(author__icontains=word))
     
-    paginator = Paginator(books, 5)
+    paginator = Paginator(books, 4)
     
     page_number = request.GET.get('page', 1)
     page = paginator.get_page(page_number)
