@@ -39,8 +39,11 @@ class BookDetail(generic.DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["reviews"] = Review.objects.filter(book=kwargs['object'])
         context['reviewform'] = ReviewForm()
+        reviews = Review.objects.filter(book=kwargs['object'])
+        if reviews:
+            context["reviews"] = reviews
+            context['review_aver'] = sum([review.grade for review in reviews])/len(reviews)
         if self.request.user.is_authenticated:
             context['can_review'] = Books_rental.objects.filter(book=kwargs['object'],user=self.request.user)
         return context
