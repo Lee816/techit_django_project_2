@@ -35,3 +35,24 @@ class Books_rental(models.Model):
 
     def __str__(self):
         return f'{self.user} rental "{self.book}"'
+    
+    
+class Review(models.Model):
+    GRADE = (
+        (0.0, '0점'),
+        (0.5, '0.5점'),
+        (1.0, '1점'),
+        (1.5, '1.5점'),
+        (2.0, '2점'),
+        (2.5, '2.5점'),
+        (3.0, '3점'),
+        (3.5, '3.5점'),
+        (4.0, '4점'),
+        (4.5, '4.5점'),
+        (5.0, '5점')
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    body = models.TextField(blank=True)
+
+    grade = models.DecimalField(max_digits=2, decimal_places=1, choices=GRADE)
