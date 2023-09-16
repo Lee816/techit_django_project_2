@@ -41,7 +41,8 @@ class BookDetail(generic.DetailView):
         context = super().get_context_data(**kwargs)
         context["reviews"] = Review.objects.filter(book=kwargs['object'])
         context['reviewform'] = ReviewForm()
-        context['can_review'] = Books_rental.objects.filter(book=kwargs['object'],user=self.request.user)
+        if self.request.user.is_authenticated:
+            context['can_review'] = Books_rental.objects.filter(book=kwargs['object'],user=self.request.user)
         return context
 
 class BookCreate(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
