@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Book, Books_rental, Category
+from .models import Book, Books_rental, Category, Review
 
 # Register your models here.
 
@@ -16,4 +16,10 @@ class BookAdmin(admin.ModelAdmin):
 class BooksRentalAdmin(admin.ModelAdmin):
     list_display = ['user','book','rental_date','return_date']
     list_filter = ['user','book','rental_date','return_date']
+    search_fields = ['user','book']
+    
+@admin.register(Review)
+class ReviewAdmin(admin.ModelAdmin):
+    list_display = ['user','book','body','grade']
+    list_filter = ['user','book','body','grade']
     search_fields = ['user','book']
