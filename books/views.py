@@ -7,7 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required, permission_required
 from django.core.paginator import Paginator
 
-from .models import Book, Books_rental, Category
+from .models import Book, Books_rental, Category, Review
+from .forms import ReviewForm
 from .tasks import return_email
 
 # Create your views here.
@@ -34,6 +35,12 @@ class BookDetail(generic.DetailView):
     pk_url_kwarg = 'book_id'
     context_object_name = 'book'
     template_name = 'books/book_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["reviews"] = Review.objects.filter(book=kwargs['object'])
+        context['reviewform'] = ReviewForm()
+        return context
 
 class BookCreate(LoginRequiredMixin, PermissionRequiredMixin, generic.CreateView):
     model = Book
