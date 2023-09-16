@@ -37,6 +37,10 @@
                     </ul>
                 {% endblock category %}
                 </div>
+                {% if request.user.is_authenticated %}
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="{% url 'books:my_rentals' %}">My Rental</a>
+                <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">My Page</a>
+                {% endif %}
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Menu1</a>
                 <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Menu2</a>
                 {% if request.user.is_superuser %}
@@ -63,7 +67,6 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                             {% if request.user.is_authenticated %}
-                                <li class="nav-item"><a class="nav-link" href="{% url 'books:my_rentals' %}">My Rental</a></li>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ request.user.username }}</a>
                                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
