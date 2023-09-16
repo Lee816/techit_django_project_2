@@ -9,4 +9,5 @@ urlpatterns = [
     path('logout/',views.LogoutUser, name='logout'),
     path('update/',views.UpdateUser, name='update'),
     path('changePW/',views.ChangePWUser, name='changePW'),
+    path('<int:user_id>/',views.MyPage, name='mypage'),
 ]
