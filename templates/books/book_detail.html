@@ -18,4 +18,17 @@
             </div>
         </div>
     </section>
+
+    {% for review in reviews %}
+        <p>평점 : {{ review.grade }} {{ review.body }}</p>
+    {% endfor %}
+
+    {% if can_review %}
+        <form action="{% url "books:book_review_add" book.id %}" method="post">
+            {{ reviewform.grade }}
+            {{ reviewform.body }}
+            {% csrf_token %}
+            <p><input type="submit" value="Add"></p>
+        </form>
+    {% endif %}
 {% endblock contents %}
