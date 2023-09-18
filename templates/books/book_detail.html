@@ -18,11 +18,10 @@
             </div>
         </div>
     </section>
-
-    총 평점 : {{ review_aver|floatformat:1 }}
-    <hr>
     
     {% for review in reviews %}
+        총 평점 : {{ review_aver|floatformat:1 }}
+        <hr>
         <p>{{ review.user }} 평점 : {{ review.grade }} {{ review.body }}</p>
         <hr>
     {% endfor %}
