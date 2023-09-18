@@ -55,4 +55,4 @@ class Review(models.Model):
     book = models.ForeignKey(Book, on_delete=models.CASCADE)
     body = models.TextField(blank=True)
 
-    grade = models.DecimalField(max_digits=2, decimal_places=1, choices=GRADE)
+    grade = models.FloatField(choices=GRADE)
