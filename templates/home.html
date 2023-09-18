@@ -20,7 +20,7 @@
             </ol>
         </div>
         <div class="p-2">
-            <h5>Best Rent Top 10</h5>
+            <h5>Best Rent Top 5</h5>
             <hr>
             <ol class="list-group list-group-numbered">
                 {% for book in like_books %}
@@ -35,5 +35,21 @@
                 {% endfor %}
             </ol>
         </div>
+        {% if recommend_category %}
+            <div class="p-2">
+                <h5>Recommend of {{ recommend_category }}</p></h5>
+                <hr>
+                <ol class="list-group">
+                    {% for title, grade in rank_books.items %}
+                    <li class="list-group-item d-flex justify-content-between align-items-start">
+                        <div class="ms-2 me-auto">
+                            <div class="fw-bold">{{ title }}</div>
+                        </div>
+                        <span class="badge bg-transparent text-body">Grade : {{ grade|floatformat:1 }}</span>
+                    </li>
+                    {% endfor %}
+                </ol>
+            </div>
+        {% endif %}
     </div>
 {% endblock contents %}

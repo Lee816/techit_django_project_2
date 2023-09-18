@@ -139,5 +139,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # 콘솔메일 설정
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-# celery 설정
+# celery 설정(즉시실행)
 CELERY_TASK_ALWAYS_EAGER =  True
+
+# redis 설정
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0

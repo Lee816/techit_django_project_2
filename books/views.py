@@ -7,6 +7,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.contrib.auth.decorators import login_required, permission_required
 from django.views.decorators.http import require_POST
 from django.core.paginator import Paginator
+import redis
+from django.conf import settings
 
 from .models import Book, Books_rental, Category, Review
 from .forms import ReviewForm
@@ -14,10 +16,51 @@ from .tasks import return_email
 
 # Create your views here.
 
+redi = redis.Redis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
+# 추천 시스템 ( 사용자가 자주 대여하는 카테고리 내의 평점이 높은 책)
+def recommendbook(user):
+    # 카테고리 별 대여 횟수
+    categories = {category.name : 0 for category in list(Category.objects.all())}
+    
+    for rental in list(Books_rental.objects.filter(user=user)):
+        categories[rental.book.category.name] += 1
+    
+    # 카테고리 별 대여 횟수 redis 등록
+    redi.zadd(name='category_rank', mapping=categories)
+    
+    # 대여 횟수가 제일 많은 카테고리 반환
+    recommend_category = redi.zrevrange(name='category_rank',start=0,end=-1,withscores=True)[0][0].decode('utf-8')
+
+    # 추천 카테고리 책 별 평점
+    books = Book.objects.filter(category__name=recommend_category)
+    recommend_books = {book.title : 0 for book in books}
+
+    for book in books:
+        reviews = Review.objects.filter(book=book)
+        if reviews:
+            recommend_books[book.title] = sum([review.grade for review in reviews])/len(reviews)
+
+    # 추천 카테고리 책 평점 redis 등록
+    redi.zadd(name='book_rank', mapping=recommend_books)
+    
+    # 평점이 높은 책 5권 반환
+    rank_books = {}
+    for item in redi.zrevrange(name='book_rank',start=0,end=5, withscores=True):
+        rank_books[item[0].decode('utf-8')] = item[1]
+    
+    return recommend_category, rank_books
+
 def HomePage(request):
     latest_books = Book.objects.all().order_by('-created')[:5]
-    like_books = Book.objects.all().order_by('-like')[:10]
-    return render(request, 'home.html',{'latest_books':latest_books,'like_books':like_books})
+    like_books = Book.objects.all().order_by('-like')[:5]
+    
+    if not request.user.is_anonymous :
+        recommend_category,rank_books = recommendbook(request.user)
+    else:
+        recommend_category = None
+        rank_books = None
+    
+    return render(request, 'home.html',{'latest_books':latest_books,'like_books':like_books, 'recommend_category':recommend_category, 'rank_books':rank_books})
 
 class BooksList(generic.ListView):
     model = Book
