@@ -19,12 +19,14 @@
         </div>
     </section>
     
-    {% for review in reviews %}
+    {% if reviews %}
         총 평점 : {{ review_aver|floatformat:1 }}
         <hr>
-        <p>{{ review.user }} 평점 : {{ review.grade }} {{ review.body }}</p>
-        <hr>
-    {% endfor %}
+        {% for review in reviews %}
+            <p>{{ review.user }} 평점 : {{ review.grade }} {{ review.body }}</p>
+            <hr>
+        {% endfor %}
+    {% endif %}
 
     {% if can_review %}
         <form action="{% url "books:book_review_add" book.id %}" method="post">
