@@ -67,6 +67,8 @@ class BooksList(generic.ListView):
     context_object_name = 'books'
     template_name = 'books/books_list.html'
     
+    ordering = ['-created']
+    
     paginate_by = 4
     
 def CategoryBooksList(request, category_id):
