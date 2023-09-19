@@ -88,3 +88,21 @@ RebbitMQ
 
 Celery
 1. celery 실행 - `celery -A trackproject worker -l info`
+
+Redis
+1. docker 실행
+2. reids 설치 - `docker pull redis`
+3. redis 실행 - `docker run -it --rm --name redis -p 6379:6379 redis`
+
+## 비로그인 유저
+- book detail - 도서 상세페이지 에서 도서의 평점 및 리뷰를 볼 수 있다.
+
+## 로그인 유저
+- 반납시 반납완료 이메일 전송
+- 대여한 기록이 있는 도서에 리뷰를 남길 수 있다.
+- 사용자 페이지
+    - 총 대여 횟수
+    - 도서 상관없이 작성한 리뷰의 평균
+    - 도서별 작성한 리뷰 리스트
+- 메인페이지
+    - 자신이 대여한 도서 중 많은 비중을 차지하는 카테고리의 평균 평점이 높은 도서를 추천해준다
